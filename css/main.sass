@@ -1328,24 +1328,156 @@ form#searchform
 
 //Cat-specific layout
 
+section#blog-title
+  width: 100%
+  background-color: rgba(255,255,255,0.1)
+  position: relative
+  padding: 80px 0px 80px 0px
+  margin-bottom: 30px
+
+  div#bg_img
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    -webkit-filter: grayscale(1) brightness(0.7)
+    -moz-filter: grayscale(1) brightness(0.7)
+    -ms-filter: grayscale(1) brightness(0.7)
+    -o-filter: grayscale(1) brightness(0.7)
+    filter: grayscale(1) brightness(0.7)
+    background-size: cover
+    background-position: center
+    background-attachment: fixed
+    z-index: 1
+
+  div#bg
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: -moz-linear-gradient(right,  rgba(29,31,96,0.7) 0%, rgba(40,41,97,0) 100%)
+    background: -webkit-linear-gradient(right,  rgba(29,31,96,0.7) 0%,rgba(40,41,97,0) 100%)
+    background: linear-gradient(to left,  rgba(29,31,96,0.7) 0%,rgba(40,41,97,0) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282961', endColorstr='#00282961',GradientType=1 )
+    z-index: 2
+
+  div#full-height
+    max-width: 1000px
+    margin: 0 auto
+    height: 250px
+    display: flex
+    justify-content: center
+    flex-direction: column
+
+    h2
+      z-index: 3
+      position: relative
+      text-transform: uppercase
+      color: $background-color
+      margin: 0px auto
+      font-size: 2.5em
+      text-shadow: 0px 0px 10px rgba(0,0,0,0.5)
+      text-align: center
+      max-width: 800px
+
+    h3
+      z-index: 3
+      position: relative
+      text-transform: uppercase
+      font-family: $p-font-stack
+      color: $background-color
+      margin: 0px auto
+      font-size: 0.9em
+      font-weight: 100
+      text-shadow: 0px 0px 10px rgba(0,0,0,0.5)
+      line-height: 24px
+
+      ul
+        list-style-type: none
+        display: inline
+
+        li:hover
+          background-color: $light-grey
+          border: 1px solid #fafafa
+          text-shadow: none !important
+
+          a
+            color: $brand-color !important
+
+        li
+          display: inline
+          margin-right: 3px
+          display: inline
+          margin-right: 3px
+          border: 1px solid #fafafa
+          padding: 2px 9px 2px 9px
+          border-radius: 20px
+          font-size: 0.8em
+          transition: 0.1s
+
+          a
+            color: $light-grey
+
 article.blog
-  max-width: 900px
+  max-width: 700px
+  margin: 0px auto 0px auto
+
+  h2
+    text-transform: uppercase
+    color: $brand-color
+    font-size: 2em
+    margin-top: 20px
+
+  h3
+    color: $mid-grey
+    font-family: $p-font-stack
+    font-size: 0.8em
+    font-weight: 100
+    margin-bottom: 30px
+
+    ul
+      list-style-type: none
+      display: inline
+
+      li
+        display: inline
+
+        a
+          color: $brand-color
+
+  blockquote
+    float: right
+    width: 30%
+    font-size: 1.8em
+    margin: 20px
+
+    p
+      font-weight: 400
+      font-family: $h-font-stack
+      color: $brand-color
+      padding-left: 10px
+      border-left: 4px solid $lighter-brand
 
   div.video-box
     margin: 40px 0px 40px 0px
 
-  p:first-of-type
-    font-weight: 700
-    font-size: 1.2em
-    margin-top: 20px
-    margin-bottom: 20px
-
   p
-    max-width: 600px
-    margin: 0px auto 20px auto
+    margin: 0px auto 15px auto
 
     a
       color: $brand-color
+
+  div.wp-caption
+    width: 100% !important
+    margin: 20px auto 20px auto
+
+    img
+      border-bottom: 4px solid $light-brand
+
+    p
+      font-size: 0.8em
 
   div.blog-tile
     margin: 30px auto
@@ -1533,3 +1665,31 @@ div.hire-tile
 
   h4
     font-size: 0.9em
+
+//Live
+
+span.mobile-player
+  font-size: 0.9em
+  color: #969696
+  font-family: open sans
+  margin-bottom: 20px
+
+  a
+    color: $brand-color
+
+section.live-container
+  display: flex
+  flex-direction: row
+  padding-bottom: 0px
+
+  iframe.twitter-timeline
+    max-width: 300px !important
+    max-height: 360px !important
+
+  div.autosizer
+    height: auto
+    width: auto
+    flex: 1
+    margin-right: 20px !important
+
+    div.jwplayer

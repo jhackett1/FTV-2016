@@ -1,4 +1,7 @@
 @media screen and (max-width: 900px) {
+  section.live-container iframe.twitter-timeline {
+    display: none !important; }
+
   section.page_strip {
     flex-direction: column;
     padding: 15px; }
@@ -87,11 +90,18 @@
 
   section#title {
     height: 250px; }
-    section#title div#full-height {
+
+  section#blog-title {
+    padding: 0px 0px 0px 0px; }
+    section#blog-title article.blog {
+      box-shadow: none; }
+      section#blog-title article.blog p {
+        font-size: 1em; }
+    section#blog-title div#full-height {
       height: 200px; }
-      section#title div#full-height h2 {
+      section#blog-title div#full-height h2 {
         font-size: 1.5em; }
-      section#title div#full-height h3 {
+      section#blog-title div#full-height h3 {
         max-width: 275px;
         text-align: center; }
 

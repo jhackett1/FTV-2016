@@ -10,58 +10,29 @@
       $featured_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
       ?>
 
-        <section id="title">
+        <section id="blog-title">
           <div id="bg_img" style="background-image:url(<?php echo $featured_img; ?>)"></div>
           <div id="bg"></div>
-          <div id="full-height">
-            <h2><?php the_title(); ?></h2>
-            <h3>Published <?php the_date(); ?> | In <?php the_category(); ?></h3>
-          </div>
-        </section>
 
-        <article class="blog">
-          <a href="http://forgetoday.com/tv"><span id="back"><I class="fa fa-arrow-circle-left"></i> Home</span></a>
-          <?php the_content(); ?>
+                  <article class="blog">
+                    <a href="http://forgetoday.com/tv"><span id="back"><I class="fa fa-arrow-circle-left"></i> Home</span></a>
 
-          <?php
+                      <h2><?php the_title(); ?></h2>
+                      <h3>Published <?php the_date(); ?> | In <?php the_category(); ?> | By <?php the_author(); ?></h3>
 
-          $args3 = Array(
-            'cat' => array($post->cat_ID),
-            'posts_per_page' => '1',
-            'post__not_in' => array($post->ID)
-          );
-          $blog_query = new WP_Query( $args3 );
+                    <?php the_content(); ?>
 
-          if ( $blog_query->have_posts() ) {
-            while ( $blog_query->have_posts() ) {
-              $blog_query->the_post();
-              ?>
+                    <?php comments_template( $file, $separate_comments ); ?>
 
-                <div class="blog-tile">
-                <h4>Watch next <i class="fa fa-play"></i></h4>
-                <h3><?php the_title(); ?></h3>
-                <a href="<?php the_permalink(); ?>">
-                  <div class="cover"></div>
-                </a>
-              </div>
-
-              <?php
+                  <?php
+              } // end while
+            }; // end if
+            ?>
 
 
-          } // end while
-        }; // end if
-        wp_reset_postdata();
-          ?>
+            </article>
 
-          <?php comments_template( $file, $separate_comments ); ?>
-
-        <?php
-    } // end while
-  }; // end if
-  ?>
-
-
-  </article>
+                    </section>
 
 
   <h4 class="related">More content</h4>
